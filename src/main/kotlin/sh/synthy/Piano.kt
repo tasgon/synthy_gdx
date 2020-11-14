@@ -1,7 +1,5 @@
 package sh.synthy
 
-import java.sql.Timestamp
-import javax.sound.midi.MidiDevice
 import javax.sound.midi.MidiMessage
 import javax.sound.midi.MidiSystem
 import javax.sound.midi.Receiver
@@ -22,7 +20,7 @@ object Piano {
 
 class MidiReceiver(val name: String) : Receiver {
     override fun send(msg: MidiMessage?, timestamp: Long) {
-        println("Msg: ${msg?.message} @ $timestamp")
+        println("Msg: ${msg?.message?.get(0)} @ $timestamp")
     }
 
     override fun close() {
