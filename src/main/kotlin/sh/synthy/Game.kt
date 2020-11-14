@@ -1,5 +1,6 @@
 package sh.synthy
 
+import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.files.FileHandle
 import com.badlogic.gdx.graphics.g2d.BitmapFont
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
@@ -17,6 +18,7 @@ class Game : KtxGame<KtxScreen>() {
     override fun create() {
         println("Creating game")
         Scene2DSkin.defaultSkin = Skin(FileHandle("/home/myself/Code/Java/synthy/src/main/resources/flat/skin/skin.json"))
+        //Scene2DSkin.defaultSkin = Skin(Gdx.files.internal("resources/flat/skin/skin.json"))
         addScreen(MainMenu(this))
         setScreen<MainMenu>()
         super.create()
